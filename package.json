@@ -1,0 +1,9 @@
+{
+  "name": "advent-of-code-2021",
+  "version": "1.0.0",
+  "repository": "https://github.com/saudes77/advent-of-code-2021.git",
+  "author": "Stephanie Sauder",
+  "license": "MIT",
+  "private": false,
+  "type": "module"
+}
