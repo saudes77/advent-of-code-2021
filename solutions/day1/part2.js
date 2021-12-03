@@ -1,4 +1,4 @@
-import input from '../../data/input.js'
+import input from './input.js'
 import { countDepthIncreases, getSummedWindows } from "../../index.js";
 
 const windowSums = getSummedWindows(input)
