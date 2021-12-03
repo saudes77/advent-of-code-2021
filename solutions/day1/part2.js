@@ -1,5 +1,5 @@
-import input from './input.js'
-import { countDepthIncreases, getSummedWindows } from "../../index.js";
+import measurements from './depthMeasurements.js'
+import { countDepthIncreases, getSummedWindows } from "./depthChangeUtils.js";
 
-const windowSums = getSummedWindows(input)
+const windowSums = getSummedWindows(measurements)
 console.log(countDepthIncreases(windowSums))

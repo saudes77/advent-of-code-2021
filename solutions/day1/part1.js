@@ -1,4 +1,4 @@
-import input from './input.js'
-import { countDepthIncreases } from "../../index.js";
+import measurements from './depthMeasurements.js'
+import { countDepthIncreases } from "./depthChangeUtils.js";
 
-console.log(countDepthIncreases(input))
+console.log(countDepthIncreases(measurements))

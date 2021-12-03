@@ -1,8 +1,8 @@
-export const countDepthIncreases = (input = []) => {
+export const countDepthIncreases = (measurements = []) => {
   let increases = 0;
   let lastDepth = null;
 
-  input.forEach((depth) => {
+  measurements.forEach((depth) => {
     if (lastDepth != null && lastDepth < depth) {
       increases++
     }
@@ -14,11 +14,11 @@ export const countDepthIncreases = (input = []) => {
 
 const sumWindow = (window) => window.reduce((prev, curr) => prev + curr)
 
-export const getSummedWindows = (input = [], windowSize = 3) => {
+export const getSummedWindows = (measurements = [], windowSize = 3) => {
   let sums = [];
 
-  for (let i = 0; i < input.length; i++) {
-    let window = input.slice(i, i + windowSize);
+  for (let i = 0; i < measurements.length; i++) {
+    let window = measurements.slice(i, i + windowSize);
 
     if (window.length !== windowSize) {
       break;

@@ -1,4 +1,4 @@
-const input = [
+const measurements = [
 174,
 180,
 179,
@@ -2001,4 +2001,4 @@ const input = [
 4618
 ];
 
-export default input;
+export default measurements;
