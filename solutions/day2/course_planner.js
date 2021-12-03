@@ -17,6 +17,25 @@ export const simpleMoveInterpretter = (position, movement) => {
   return new Position(newHorizontalPos, newDepth);
 }
 
+export const advancedMoveInterpretter = (position, movement) => {
+  let newHorizontalPos = position.horizontalPosition;
+  let newDepth = position.depth;
+  let newAim = position.aim;
+  switch (movement.direction) {
+    case "forward":
+      newHorizontalPos += movement.distance;
+      newDepth += (movement.distance * position.aim);
+      break;
+    case "up":
+      newAim -= movement.distance;
+      break;
+    case "down":
+      newAim += movement.distance;
+      break;
+  }
+  return new Position(newHorizontalPos, newDepth, newAim);
+}
+
 export default class CoursePlanner {
   constructor(startPosition, movements, moveInterpretter) {
     this.startPosition = startPosition;
