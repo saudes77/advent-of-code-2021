@@ -1,6 +1,8 @@
 import movements from "./movements.js";
-import Submarine from "./submarine.js";
+import CoursePlanner from "./course_planner.js";
+import Position from "./position.js";
 
-const yellow_submarine = new Submarine();
-const endLocation = yellow_submarine.navigate(movements);
-console.log(endLocation.horizontalPosition * endLocation.depth);
+const startingPosition = new Position();
+const plan = new CoursePlanner(startingPosition, movements);
+const endCoords = plan.determineEndPosition();
+console.log(endCoords.horizontalPosition * endCoords.depth);
