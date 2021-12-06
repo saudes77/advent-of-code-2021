@@ -1,3 +1,5 @@
+import { determineMostCommonBits } from "./binaryUtils.js";
+
 class PowerConsumptionCalculator {
   constructor(diagnosticReport) {
     const binaryRates = PowerConsumptionCalculator.calculateRatesInBinary(diagnosticReport);
@@ -14,28 +16,14 @@ class PowerConsumptionCalculator {
   }
 
   static calculateRatesInBinary = (diagnosticReport) => {
-    let onesTally = [];
-
-    diagnosticReport.forEach((binaryString) => {
-      let bits = Array.from(binaryString);
-
-      bits.forEach((bit, index) => {
-        if (typeof onesTally[index] === "undefined") {
-          onesTally[index] = 0;
-        }
-
-        if (bit === "1") {
-          onesTally[index] += 1;
-        }
-      });
-    });
+    let onesTally = determineMostCommonBits(diagnosticReport);
 
     let gamma = "";
     let epsilon = "";
     const splitPoint = diagnosticReport.length / 2;
     const minMajorityTally = Math.ceil(splitPoint);
 
-    onesTally.forEach((positionTally, position) => {
+    onesTally.forEach((positionTally) => {
       if (positionTally === splitPoint) {
         console.error("Unable to calculate power consumption. Check input.");
         return;
