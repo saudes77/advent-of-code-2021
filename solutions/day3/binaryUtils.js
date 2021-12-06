@@ -30,3 +30,22 @@ export const determineMostCommonBits = (binaryStrings) => {
 
   return bitTallies;
 }
+
+export const determineMostCommonBit = (binaryStrings, position) => {
+  let bitTally = 0;
+
+  binaryStrings.forEach((binaryString) => {
+    let bit = binaryString.charAt(position);
+
+    switch (bit) {
+      case "1":
+        bitTally += 1;
+        break;
+      case "0":
+        bitTally -= 1;
+        break;
+    }
+  });
+
+  return bitTally;
+};
