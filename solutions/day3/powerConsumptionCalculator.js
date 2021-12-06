@@ -16,20 +16,17 @@ class PowerConsumptionCalculator {
   }
 
   static calculateRatesInBinary = (diagnosticReport) => {
-    let onesTally = determineMostCommonBits(diagnosticReport);
+    let bitTallies = determineMostCommonBits(diagnosticReport);
 
     let gamma = "";
     let epsilon = "";
-    const splitPoint = diagnosticReport.length / 2;
-    const minMajorityTally = Math.ceil(splitPoint);
 
-    onesTally.forEach((positionTally) => {
-      if (positionTally === splitPoint) {
+    bitTallies.forEach((positionTally) => {
+      if (positionTally === 0) {
         console.error("Unable to calculate power consumption. Check input.");
         return;
       }
-
-      if (positionTally < minMajorityTally) {
+      else if (positionTally < 0) {
         gamma += "0";
         epsilon += "1";
       }
