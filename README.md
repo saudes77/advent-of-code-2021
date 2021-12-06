@@ -8,7 +8,20 @@ To run: `node ./solutions/day1/part1.js`
 
 ## Learning Log
 
+### Day 1
+
+Spent most of this day getting my development environment up and running and getting familiar with how Advent of Code challenges work.
+
+### Day 2
+
+Today I ended up focusing on the design of the code. I did a lot of refactoring to try to get it to better relfect the problem domain. I also applied the principle of "isolating the thing that changes." In this case, it was the way the submarine commands are interpretted. Used dependency injection to accomplish this.
+
+I could have kept refactoring, but, well... it was time to call it a night. 😴
+
+Also, this one felt like it would have been a good one for Typescript.
+
 ### Day 3
+
 Today I learned the global [`parseInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) method can convert binary (and other number systems) to decimal. Really glad I didn't have to do this myself! Although, I _do_ have fond memories of writing code to perform this sort of base conversion for one or two classes when I was getting my CS degree. Maybe I'll do it again for fun sometime, just not today 😅.
 
 I also learned that [`Array.from`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) can be used on strings (I've used it on a NodeList in the past).
